@@ -1,8 +1,17 @@
 import React from 'react'
+import ResultCard from './ResultCard'
 
-export const Content = () => {
+const Content = () => {
     return (
-        <div className='h-[calc(100vh-104px)] flex flex-1 align-center text-white'>Content</div>
+        <section className='pt-[133px] px-[104px]'>
+            <div className="mb-9 text-5xl text-white font-semibold"><span>Search Results</span></div>
+            <div className="grid grid-cols-3 gap-4">
+                {
+                    Array(6).fill(0).map((_, i) => <ResultCard key={i} />)
+                }
+            </div>
+        </section>
     )
 }
+
 export default Content

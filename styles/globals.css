@@ -7,11 +7,12 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'DM Sans', sans-serif;
+  background-color: #1e1e1e;
 }
 
 #__next {
   height: 100vh;
-  background-color: #333;
+  background-color: #1e1e1e;
 }
 
 a {
@@ -27,7 +28,18 @@ a {
   background: linear-gradient(270deg, #000000 -2.92%, rgba(0, 0, 0, 0) 100%);
 }
 
-.material-symbols-outlined {
+.gradient-result-card {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+}
+
+.centered-axis-xy {
+  position: absolute;
+  /* left: 50%; */
+  top: 50%;
+  transform: translate(22px, -50%);
+}
+
+i {
   font-family: 'Material Symbols Outlined';
   font-weight: normal;
   font-style: normal;
@@ -40,4 +52,29 @@ a {
   word-wrap: normal;
   white-space: nowrap;
   direction: ltr;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: rgba(0, 0, 0, 0);
+  opacity: 1;
+  display: block;
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+  border-width: thin
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  left: 22px;
+}
+
+input::-webkit-datetime-edit-fields-wrapper {
+  position: relative;
+  left: 10%;
+}
+
+input::-webkit-datetime-edit {
+  position: relative;
+  left: 10%;
 }
