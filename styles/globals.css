@@ -32,7 +32,7 @@ a {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
 }
 
-.centered-axis-xy {
+.input-icon {
   position: absolute;
   /* left: 50%; */
   top: 50%;
