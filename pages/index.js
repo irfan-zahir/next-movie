@@ -5,9 +5,19 @@ import Content from '../components/content/Content'
 import Hero from '../components/hero/Hero'
 import Footer from '../components/footer/Footer'
 import { SearchProvider } from '../providers/SearchProvider'
+import dayjs from 'dayjs'
 // import styles from '../styles/Home.module.css'
 
-export default function Home() {
+export const getServerSideProps = async () => {
+  const today = dayjs().format("YYYY-MM-DD")
+  const res = await fetch(`https://821f21ea-3d75-4b17-bac5-f8a0fc587ad2.mock.pstmn.io/new_movies/?r_date=${today}`)
+  const { data: newRelases } = await res.json()
+
+  return { props: { newRelases } }
+}
+
+export default function Home({ newRelases }) {
+
   return (
     <div className='p-0 h-full'>
       <Head>
@@ -19,7 +29,7 @@ export default function Home() {
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
       </Head>
-      <SearchProvider>
+      <SearchProvider initialValue={newRelases}>
         <Header />
         <Hero />
         <Content />

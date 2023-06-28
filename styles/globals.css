@@ -54,7 +54,8 @@ i {
   direction: ltr;
 }
 
-input[type="date"]::-webkit-calendar-picker-indicator {
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
   color: rgba(0, 0, 0, 0);
   opacity: 1;
   display: block;
@@ -64,17 +65,20 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border-width: thin
 }
 
-input[type="date"]::-webkit-calendar-picker-indicator {
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
   position: absolute;
   left: 22px;
 }
 
-input::-webkit-datetime-edit-fields-wrapper {
+input[type="date"]::-webkit-datetime-edit-fields-wrapper,
+input[type="datetime-local"]::-webkit-datetime-edit-fields-wrapper {
   position: relative;
-  left: 10%;
+  left: 28px;
 }
 
-input::-webkit-datetime-edit {
+input[type="date"]::-webkit-datetime-edit,
+input[type="datetime-local"]::-webkit-datetime-edit {
   position: relative;
-  left: 10%;
+  left: 28px;
 }

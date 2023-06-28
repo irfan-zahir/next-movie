@@ -14,7 +14,7 @@ const menus = [
 
 const Header = () => {
   const router = useRouter()
-  const { showInput, setshowInput } = useSearchContext()
+  const { showInput, setshowInput, reset } = useSearchContext()
 
   const onClickSearch = (e) => {
     e.preventDefault()
@@ -35,7 +35,10 @@ const Header = () => {
           {
             menus.map(([title, url], i) => {
               const isCurrent = router.pathname === url
-              const onClick = (e) => e.preventDefault()
+              const onClick = (e) => {
+                e.preventDefault()
+                if (url === "/") reset()
+              }
 
               return (
                 <div className='flex flex-col items-center justify-center h-8' key={i}>

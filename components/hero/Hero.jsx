@@ -7,9 +7,7 @@ import SearchInput from './SearchInput'
 
 const Hero = () => {
 
-    const { showInput, setValue, setshowInput } = useSearchContext()
-
-    console.log({ showInput })
+    const { showInput, setValue, setshowInput, value } = useSearchContext()
 
     return (
         <section className='h-full gradient-bg px-[214px] flex flex-row flex-1 items-center justify-between text-white'>
