@@ -40,17 +40,3 @@ function ResultCard({ movie: {
 }
 
 export default ResultCard
-
-
-// "Movie_ID": 1,
-// "Title": "The Irishman",
-// "Duration": "1 hour 20 minutes",
-// "Views": "21.1k",
-// "Genre": "comedy",
-// "Poster": "https://m.media-amazon.com/images/M/MV5BMGUyM2ZiZmUtMWY0OC00NTQ4LThkOGUtNjY2NjkzMDJiMWMwXkEyXkFqcGdeQXVyMzY0MTE3NzU@._V1_FMjpg_UX1000_.jpg",
-// "Overall_rating": 7.9,
-// "Theater_name": "abc movies",
-// "Start_time": "2020-04-04T09:00:00",
-// "End_time": "2020-04-04T12:00:00",
-// "Description": "An aging hitman recalls his time with the mob and the intersecting events with his friend, Jimmy Hoffa, through the 1950-70s.",
-// "Theater_room_no": 1
