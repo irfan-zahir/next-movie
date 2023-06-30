@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import React from 'react'
 import { useSearchContext } from '../../providers/SearchProvider';
+import { useAuthContext } from '../../providers/AuthProvider';
 
 const menus = [
   ["Home", "/"],
@@ -14,6 +15,7 @@ const menus = [
 
 const Header = () => {
   const router = useRouter()
+  const { authUser, login, logout } = useAuthContext()
   const { showInput, setshowInput, reset } = useSearchContext()
 
   const onClickSearch = (e) => {
@@ -22,6 +24,14 @@ const Header = () => {
     // !showInput &&
     setshowInput(!showInput)
   }
+
+  // simple authentication
+  const authHandle = () => {
+    if (!authUser) login("John Glich")
+    if (authUser) logout()
+  }
+
+  const classnames = (...classes) => classes.join(` `);
 
   return (
     <header className='px-[103px] h-[104px] flex flex-row items-center absolute w-full'>
@@ -60,7 +70,11 @@ const Header = () => {
         {/* avatar */}
         <img className="inline-block h-12 w-12 rounded-full ring-2 ring-white" src="https://www.thecolorapi.com/id?format=svg&named=false&hex=1e1e1e" alt="John Glich" />
         {/* name */}
-        <span className='text-white font-bold ml-4'>John Glich</span>
+        <button onClick={() => authHandle()} className={classnames(`text-${authUser ? "white" : "yellow-500"} font-bold ml-4 hover:cursor-pointer`)}>
+          {
+            authUser ? authUser : "Login"
+          }
+        </button>
       </div>
     </header>
   )

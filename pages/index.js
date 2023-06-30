@@ -6,6 +6,7 @@ import Hero from '../components/hero/Hero'
 import Footer from '../components/footer/Footer'
 import { SearchProvider } from '../providers/SearchProvider'
 import dayjs from 'dayjs'
+import { AuthProvider } from '../providers/AuthProvider'
 // import styles from '../styles/Home.module.css'
 
 export const getServerSideProps = async () => {
@@ -29,12 +30,18 @@ export default function Home({ newRelases }) {
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
       </Head>
-      <SearchProvider initialValue={newRelases}>
-        <Header />
-        <Hero />
-        <Content />
-        <Footer />
-      </SearchProvider>
+      <AuthProvider initialValue={{
+        // initial values stored locally (authentication method)
+        authUser: "John Glich",
+        loading: false
+      }}>
+        <SearchProvider initialValue={newRelases}>
+          <Header />
+          <Hero />
+          <Content />
+          <Footer />
+        </SearchProvider>
+      </AuthProvider>
     </div>
   )
 }

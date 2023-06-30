@@ -11,8 +11,8 @@ function ResultCard({ movie: {
 } }) {
 
     return (
-        <div className='relative lg:h-[560px] group hover:cursor-pointer'>
-            <Image fill sizes='100%' loader={() => Poster} src={Poster} className='group-hover:z-[-1] group-hover:opacity-50' alt={`Poster: ${Title}`} />
+        <div className='relative lg:h-[560px] group hover:cursor-pointer hover:ease-in hover:duration-500 rounded-lg overflow-hidden'>
+            <Image fill sizes='100%' loader={() => Poster} src={Poster} className='group-hover:z-[-1] group-hover:opacity-50 group-hover:scale-[1.1] group-hover:ease-in group-hover:duration-200' alt={`Poster: ${Title}`} />
             <div className='flex h-full flex-col justify-between gradient-result-card p-6'>
                 {/* genre */}
                 <span className='w-fit bg-yellow-500 text-sm px-[13px] py-[1.5px] rounded-full capitalize'>
